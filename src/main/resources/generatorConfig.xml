@@ -4,11 +4,18 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <properties resource="jdbc.properties"/>
+    <classPathEntry
+            location="/home/leiz/.m2/repository/mysql/mysql-connector-java/5.1.18/mysql-connector-java-5.1.18.jar"/>
 
     <context id="MySQLTables" targetRuntime="MyBatis3">
-        <jdbcConnection driverClass="${jdbc.driver}" connectionURL="${jdbc.url}" userId="${jdbc.username}"
-                        password="${jdbc.password}"/>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost/zendev"
+                        userId="root"
+                        password="qwerty"/>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
 
         <javaModelGenerator targetPackage="com.zendev.model" targetProject="MAVEN">
             <property name="enableSubPackages" value="true"/>
