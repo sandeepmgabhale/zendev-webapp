@@ -193,7 +193,8 @@
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
                 <configuration>
                     <overwrite>true</overwrite>
-                    <configurationFile>${project.basedir}/main/resources/mybatis/generatorConfig.xml</configurationFile>
+                    <configurationFile>${project.basedir}/src/main/resources/mybatis/generatorConfig.xml
+                    </configurationFile>
                 </configuration>
             </plugin>
         </plugins>
