@@ -1,6 +1,6 @@
-CREATE DATABASE dev_webapp DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+CREATE DATABASE webapp_demo DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
 
-use dev_webapp;
+use webapp_demo;
 
 CREATE TABLE user (
   id int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -8,7 +8,7 @@ CREATE TABLE user (
   password varchar(128) NOT NULL,
   name varchar(128) NOT NULL,
   gender tinyint(1),
-  birthdate date,
+  birth_date date,
   email varchar(128),
   mobile varchar(32),
   enabled bit(1) DEFAULT 1,
