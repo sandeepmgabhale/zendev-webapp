@@ -65,7 +65,7 @@
         </property> -->
         <property name="filterChainDefinitions">
             <value>
-                /favicon.ico = anon
+                /static/** = anon
                 /login = anon
                 /** = authc
             </value>

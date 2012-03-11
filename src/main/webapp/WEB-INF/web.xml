@@ -29,16 +29,9 @@
     <!-- ==================================================================
          Servlet listeners
          ================================================================== -->
-    <listener>
-        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
-    </listener>
     <!--Spring的ApplicationContext 载入 -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
-    <!-- Spring刷新Introspector防止内存泄露 -->
-    <listener>
-        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
     </listener>
 
     <!-- ==================================================================
@@ -76,16 +69,6 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!-- URL重写 -->
-    <filter>
-        <filter-name>UrlRewriteFilter</filter-name>
-        <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>UrlRewriteFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
     <!-- ==================================================================
          Servlets
          ================================================================== -->
@@ -95,13 +78,13 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:spring/servlet-context.xml</param-value>
+            <param-value>/WEB-INF/servlet-context.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>dispatcherServlet</servlet-name>
-        <url-pattern>/app/*</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
     <!-- session超时定义,单位为分钟 -->

@@ -7,30 +7,28 @@
     <properties url="file:////home/leiz/project/zendev-webapp/src/main/resources/jdbc.properties"/>
     <classPathEntry location="/home/leiz/dev/mysql-connector-java-5.1.18.jar"/>
 
-    <context id="account" targetRuntime="MyBatis3">
+    <context id="CoreTables" targetRuntime="MyBatis3">
         <commentGenerator>
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
 
-        <jdbcConnection driverClass="${jdbc.driver}"
-                        connectionURL="${jdbc.url}"
-                        userId="${jdbc.username}"
+        <jdbcConnection driverClass="${jdbc.driver}" connectionURL="${jdbc.url}" userId="${jdbc.username}"
                         password="${jdbc.password}"/>
 
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.zendev.model.account" targetProject="MAVEN">
+        <javaModelGenerator targetPackage="com.zendev.model" targetProject="MAVEN">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="mapper.account" targetProject="MAVEN">
+        <sqlMapGenerator targetPackage="mapper" targetProject="MAVEN">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zendev.dao.account" targetProject="MAVEN">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zendev.dao" targetProject="MAVEN">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
@@ -42,14 +40,6 @@
         <table tableName="role" enableSelectByExample="false" enableDeleteByExample="false"
                enableCountByExample="false" enableUpdateByExample="false">
             <columnOverride column="id" javaType="Long"/>
-        </table>
-
-        <table tableName="user_role" enableSelectByExample="false" enableDeleteByExample="false"
-               enableCountByExample="false" enableUpdateByExample="false">
-        </table>
-
-        <table tableName="role_permission" enableSelectByExample="false" enableDeleteByExample="false"
-               enableCountByExample="false" enableUpdateByExample="false">
         </table>
     </context>
 </generatorConfiguration>
