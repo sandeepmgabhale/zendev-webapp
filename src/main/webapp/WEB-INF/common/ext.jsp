@@ -5,8 +5,6 @@
 <script type="text/javascript" src="${ctx}/static/ext/bootstrap.js"></script>
 <script type="text/javascript" src="${ctx}/static/ext/locale/ext-lang-zh_CN.js"></script>
 <script type="text/javascript">
-    Ext.onReady(function () {
-        ctx = "${ctx}";
-        Ext.BLANK_IMAGE_URL = "${ctx}/static/ext/resources/themes/images/default/tree/s.gif";
-    });
+    ctx = "${ctx}";
+    Ext.BLANK_IMAGE_URL = "${ctx}/static/ext/resources/themes/images/default/tree/s.gif";
 </script>
