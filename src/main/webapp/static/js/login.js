@@ -58,10 +58,21 @@ Ext.onReady(function () {
                                 window.location = ctx;
                             },
                             failure:function (form, action) {
-                                Ext.Msg.alert('Failed', action.result.msg);
+                                Ext.Msg.alert('提示', action.result.message, function (btn) {
+                                    if (btn == 'ok') {
+                                        Ext.getCmp("password").focus();
+                                    }
+                                });
                             }
                         });
                     }
+                }
+            },
+            {
+                text:'取消',
+                handler:function () {
+                    this.up('form').getForm().reset();
+                    Ext.getCmp("username").focus();
                 }
             }
         ]
