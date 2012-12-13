@@ -1,5 +1,5 @@
 CREATE DATABASE dev_webapp DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
-GRANT ALL PRIVILEGES ON dev_webapp.* TO 'dev@localhost' IDENTIFIED BY 'dev' ;
+GRANT ALL PRIVILEGES ON dev_webapp.* TO 'dev'@'localhost' IDENTIFIED BY 'dev' ;
 FLUSH PRIVILEGES ;
 
 use webapp_demo;
